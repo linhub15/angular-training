@@ -23,7 +23,7 @@ import { AddPersonComponent } from './directory/add-person/add-person.component'
     BrowserModule,
     AppRoutingModule,
     AuthModule,
-    ReactiveFormsModule
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

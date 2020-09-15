@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PeopleService } from '../core/http/people/people.service';
 
 @Component({
   selector: 'app-directory',
@@ -7,10 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DirectoryComponent implements OnInit {
 
-  constructor() { }
+  constructor(private peopleService: PeopleService) { }
 
   ngOnInit(): void {
-    // TODO(day-2): call PeopleService to getPeople$()
+    this.peopleService.getPeople$().subscribe();
   }
 
 }

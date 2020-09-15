@@ -10,6 +10,7 @@ export class PeopleService {
   constructor(private http: HttpClient) { }
 
   getPeople$() {
+    return this.http.get('http://localhost:3000/people');
     // TODO(day-2): call web service
   }
 

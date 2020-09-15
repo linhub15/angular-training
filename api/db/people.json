@@ -1,1 +1,8 @@
-[]
+[
+    {
+        "firstName": "Spider",
+        "lastName": "Man",
+        "email": "spiderman@gmail.com",
+        "phone": 5550234567
+    }
+]
