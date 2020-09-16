@@ -1,4 +1,6 @@
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { PeopleService } from '../core/http/people/people.service';
 
 import { DirectoryComponent } from './directory.component';
 
@@ -8,9 +10,11 @@ describe('DirectoryComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DirectoryComponent ]
+      declarations: [DirectoryComponent],
+      imports: [HttpClientTestingModule],
+      providers: [PeopleService]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
