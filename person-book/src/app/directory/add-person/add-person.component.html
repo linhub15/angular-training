@@ -1,5 +1,20 @@
-<h2>Add a person</h2>
+<!-- template driven form -->
 
-<form [formGroup]="form">
-    
+<form #personForm="ngForm" (ngSubmit)="addPerson(personForm)">
+
+    <label for="firstName">First Name</label>
+    <input name="firstName" ngModel>
+
+    <label for="lastName">Last Name</label>
+    <input name="lastName" ngModel>
+
+    <label for="email">Email</label>
+    <input name="email" ngModel>
+
+    <label for="phone">Phone</label>
+    <input name="phone" ngModel>
+
+    <button type="submit">Add Person</button>
 </form>
+
+<!-- reactive form later -->

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { NgForm } from '@angular/forms';
+import { PeopleService } from 'src/app/core/http/people/people.service';
+import { Person } from 'src/app/core/http/people/person.model';
 
 @Component({
   selector: 'app-add-person',
@@ -8,15 +10,12 @@ import { FormControl, FormGroup } from '@angular/forms';
 })
 export class AddPersonComponent implements OnInit {
 
-  form = new FormGroup({
-    firstName: new FormControl(''),
-    lastName: new FormControl(''),
-    email: new FormControl(''),
-    phone: new FormControl(),
-  })
-  constructor() { }
+  constructor(private peopleService: PeopleService) { }
 
   ngOnInit(): void {
   }
 
+  addPerson(form: NgForm) {
+    this.peopleService.addPerson(form.value as Person);
+  }
 }

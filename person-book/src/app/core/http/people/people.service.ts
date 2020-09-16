@@ -10,11 +10,13 @@ export class PeopleService {
   constructor(private http: HttpClient) { }
 
   getPeople$() {
-    return this.http.get('http://localhost:3000/people');
-    // TODO(day-2): call web service
+    return this.http.get<Person[]>('http://localhost:3000/people');
   }
 
   addPerson(person: Person) {
-    // TODO(day-2): post request
+    this.http
+      .post('http://localhost:3000/people', person, {responseType: 'text'})
+      .subscribe();
+    // {{ people$ | async }}
   }
 }
