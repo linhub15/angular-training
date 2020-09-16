@@ -1,4 +1,6 @@
+import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 
 @NgModule({
@@ -6,7 +8,7 @@ import { LoginComponent } from './login/login.component';
     LoginComponent
   ],
   providers: [],
-  imports: [],
+  imports: [FormsModule],
   exports: [
     LoginComponent
   ]

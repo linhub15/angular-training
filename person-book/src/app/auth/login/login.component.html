@@ -1,1 +1,19 @@
 <h2>Login</h2>
+
+<!-- Email, Password -->
+test@test.com
+password
+
+<form #loginForm="ngForm" (ngSubmit)="login(loginForm)">
+    <div class="form-group">
+        <label>Email</label>
+        <input type="text" name="email" ngModel>
+    </div>
+
+    <div class="form-group">
+        <label>Password</label>
+        <input type="password" name="password" ngModel>
+    </div>
+
+    <button type="submit">Login</button>
+</form>
