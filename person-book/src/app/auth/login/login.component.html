@@ -1,4 +1,13 @@
 <h2>Login</h2>
-<input type="text" name="email" #email>
-<input type="password" name="passsword" #password>
-<button type="button" (click)="login(email.value, password.value)">Login</button>
+
+<form #loginForm="ngForm" (ngSubmit)="login(loginForm.value)">
+    <div>
+        <label>Email</label>
+        <input type="email" name="email" ngModel>
+    </div>
+    <div>
+        <label>Password</label>
+        <input type="password" name="passsword" ngModel>
+    </div>
+    <button type="submit">Login</button>
+</form>

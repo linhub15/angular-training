@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../auth.service';
+import { NgForm } from '@angular/forms';
+import { AuthService, User } from '../auth.service';
 
 @Component({
   selector: 'app-login',
@@ -13,12 +14,11 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  login(email: string, password: string) {
-    this.auth.login(email, password);
+  login(loginForm: NgForm) {
+    this.auth.login(loginForm.value as User);
   }
 
   logout() {
-    this.auth.logout();
+    // this.auth.logout();
   }
-
 }
