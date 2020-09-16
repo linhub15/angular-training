@@ -34,4 +34,41 @@ addPerson() {
 }
 ```
 
-## Create a custom Phone number validator
+## Create a custom phone number validator
+```ts
+// Within a service
+phoneValidator(): ValidatorFn {
+  return (control: FormControl): ValidationErrors | null => {
+    const phonePattern = new RegExp(/^\(\d{3}\)\ ?\d{3}\-\d{4}\d?$|^\d{10}$|^$/);
+    const valid = phonePattern.test(control.value);
+    return !valid ? { 'phone': true } : null;
+  }
+}
+```
+
+Alternative syntax
+```ts
+phoneValidator: ValidatorFn
+    = (control: FormControl): ValidationErrors | null => {
+      const phonePattern = new RegExp(/^\(\d{3}\)\ ?\d{3}\-\d{4}\d?$|^\d{10}$|^$/);
+      const valid = phonePattern.test(control.value);
+      return !valid ? { 'phone': true } : null;
+    }
+```
+
+## Display the error message when the phone is invalid
+Create a getter for the phone `FormControl`.
+This gives us access to the formcontrol in the template
+
+```ts
+  get phone() {
+    return this.form.get('phone');
+  }
+```
+
+Check for the form validity and display message.
+
+```html
+<input type="text" [formControl]="phone">
+<p *ngIf="phone.invalid">Phone number is invalid</p>
+```

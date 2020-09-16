@@ -8,13 +8,18 @@ import { FormControl, FormGroup } from '@angular/forms';
 })
 export class AddPersonComponent implements OnInit {
 
-  // form = new FormGroup({
-  //   firstName: new FormControl(''),
-  //   lastName: new FormControl(''),
-  //   email: new FormControl(''),
-  //   phone: new FormControl(),
-  // })
+  form = new FormGroup({
+    firstName: new FormControl(''),
+    lastName: new FormControl(''),
+    email: new FormControl(''),
+    phone: new FormControl(),
+  });
+  
   constructor() { }
+
+  get phone() {
+    return this.form.get('phone');
+  }
 
   ngOnInit(): void {
   }
