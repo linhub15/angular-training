@@ -24,7 +24,7 @@ import { AddPersonComponent } from './directory/add-person/add-person.component'
     AppRoutingModule,
     AuthModule,
     HttpClientModule,
-    FormsModule // <--------------------
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
