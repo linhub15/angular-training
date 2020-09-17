@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 import { AuthService, User } from '../auth.service';
 
 @Component({
@@ -9,12 +10,19 @@ import { AuthService, User } from '../auth.service';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private auth: AuthService) { }
+  constructor(
+    private auth: AuthService,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
   }
 
   login(loginForm: NgForm) {
-    this.auth.login(loginForm.value as User);
+    this.auth
+      .login(loginForm.value as User)
+      .subscribe(() => {
+        this.router.navigate(['directory']);
+      });
   }
 }

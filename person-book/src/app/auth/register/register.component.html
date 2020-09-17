@@ -1,0 +1,14 @@
+<p>register works!</p>
+
+<form #registerForm="ngForm" (ngSubmit)="register(registerForm)">
+    <label>Email</label>
+    <input type="string" name="email" ngModel>
+
+    <label>Password</label>
+    <input type="password" name="password" ngModel>
+
+    <label>Confirm Password</label>
+    <input type="password" name="confirmPassword" ngModel>
+
+    <button type="submit">Register</button>
+</form>
