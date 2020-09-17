@@ -14,8 +14,7 @@ export class PeopleService {
   }
 
   addPerson(person: Person) {
-    this.http
-      .post('http://localhost:3000/people', person, {responseType: 'text'})
-      .subscribe();
+    return this.http
+      .post('http://localhost:3000/people', person, {responseType: 'text'});
   }
 }

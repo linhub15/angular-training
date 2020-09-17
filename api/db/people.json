@@ -1,1 +1,8 @@
-[{"firstName":"hubert","lastName":"lin","email":"hubert@lin.com","phone":"0"},{"firstName":"test","lastName":"test","email":"test@test.com","phone":"7801234567"},{"firstName":"another","lastName":"one","email":"another.one@gmail.com","phone":"1234567"}]
+[
+    {
+        "firstName": "another",
+        "lastName": "one",
+        "email": "another.one@gmail.com",
+        "phone": "1234567"
+    }
+]

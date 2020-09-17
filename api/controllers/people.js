@@ -34,7 +34,6 @@ const people = new Router()
 .get('/people', (ctx, next) => {
   ctx.body = getPeople();
 })
-
 .post('/people', bodyParser(), (ctx, next) => {
   const person = ctx.request.body;
   const result = addPerson(person);
@@ -54,9 +53,9 @@ const people = new Router()
   const schema = Joi.string().email().required();
   const result = schema.validate(email);
   if (result.error) {
-    ctx.body = result;
+    ctx.body = false;
   } else {
-    ctx.body = '';
+    ctx.body = true;
   }
 
 });

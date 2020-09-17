@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 import { PeopleService } from 'src/app/core/http/people/people.service';
 import { Person } from 'src/app/core/http/people/person.model';
 
@@ -21,14 +22,18 @@ export class AddPersonComponent implements OnInit {
   get firstName() {
     return this.personForm.get('firstName');
   }
-  
-  constructor(private peopleService: PeopleService) { }
-  
+
+  constructor(
+    private peopleService: PeopleService,
+    private router: Router
+  ) { }
+
   ngOnInit(): void { }
 
   addPerson() {
     const person = this.personForm.value as Person;
 
-    this.peopleService.addPerson(person);
+    this.peopleService.addPerson(person)
+      .subscribe(() => {this.router.navigate(['directory'])});
   }
 }

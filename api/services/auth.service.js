@@ -11,6 +11,8 @@ class User {
 }
 
 class AuthService {
+  secret = 'themostsecretofsecretkeys-123';
+
   /**
    * @param {User} user
    * @returns {string | null} jwt as string
@@ -34,7 +36,7 @@ class AuthService {
   signJwt(email) {
     return jwt.sign(
       { iss: 'localhost:3000', sub: email },
-      'themostsecretofsecretkeys-123'
+      this.secret
     );
   }
 
