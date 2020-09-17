@@ -9,7 +9,6 @@ import { Person } from 'src/app/core/http/people/person.model';
   styleUrls: ['./add-person.component.scss']
 })
 export class AddPersonComponent implements OnInit {
-  // TODO(day-3): Use reactive forms
   personForm = new FormGroup({
     firstName: new FormControl(''),
     lastName: new FormControl(''),
@@ -17,6 +16,11 @@ export class AddPersonComponent implements OnInit {
     phone: new FormControl()
   });
   // TODO(day-3): Add validation
+
+  // Getter
+  get firstName() {
+    return this.personForm.get('firstName');
+  }
   
   constructor(private peopleService: PeopleService) { }
   
