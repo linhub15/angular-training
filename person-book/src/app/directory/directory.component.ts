@@ -14,6 +14,6 @@ export class DirectoryComponent implements OnInit {
   constructor(private peopleService: PeopleService) { }
 
   ngOnInit(): void {
-    this.peopleService.getPeople$();
+    this.people$ = this.peopleService.getPeople$();
   }
 }
