@@ -14,7 +14,7 @@ const port = 3000;
 
 app
   .use(cors())
-  //.use(jwt({ secret: authService.secret }).unless({ path: [/^\/auth/] }))
+  .use(jwt({ secret: authService.secret }).unless({ path: [/^\/auth/] }))
   .use(people.routes())
   .use(genders.routes())
   .use(auth.routes())
