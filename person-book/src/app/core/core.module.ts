@@ -1,6 +1,7 @@
 import { NgModule } from "@angular/core";
+import { PhonePipe } from './phone.pipe';
 
 @NgModule({
-    declarations: []
+    declarations: [PhonePipe]
 })
 export class CoreModule { }

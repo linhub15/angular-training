@@ -9,7 +9,11 @@ import { DirectoryComponent } from './directory/directory.component';
 const routes: Routes = [
   { path: '', redirectTo: 'directory', pathMatch: 'full'},
   { path: 'login', component: LoginComponent },
-  { path: 'register', component: RegisterComponent, canActivate: [AuthGuard] },
+  { 
+    path: 'register',
+    component: RegisterComponent,
+    canActivate: [AuthGuard]
+  },
   { path: 'directory', component: DirectoryComponent },
   { path: 'add-person', component: AddPersonComponent }
 ];
