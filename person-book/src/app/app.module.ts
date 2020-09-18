@@ -13,12 +13,14 @@ import { AuthModule } from './auth/auth.module';
 import { DirectoryComponent } from './directory/directory.component';
 import { AddPersonComponent } from './directory/add-person/add-person.component';
 import { HttpJwtInterceptor } from './core/http-jwt.interceptor';
+import { PhonePipe } from './core/phone.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     DirectoryComponent,
     AddPersonComponent,
+    PhonePipe
   ],
   imports: [
     BrowserModule,

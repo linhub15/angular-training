@@ -5,8 +5,9 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class PhonePipe implements PipeTransform {
 
-  transform(value: unknown, ...args: unknown[]): unknown {
-    return null;
+  transform(value: string, ...args: unknown[]): unknown {
+    // 7801234567 -> +7801234567
+    return `+${value}`;
   }
 
 }
