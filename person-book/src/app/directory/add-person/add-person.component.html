@@ -2,19 +2,40 @@
 <!-- TODO(day-3) reactive forms -->
 
 <form [formGroup]="personForm" (ngSubmit)="addPerson()">
-    <label>First Name</label>
-    <input type="text" formControlName="firstName"> 
+    <div>
+        <label>First Name</label>
+        <input type="text" formControlName="firstName">
+        <p *ngIf="firstName.touched && firstName.hasError('required')">
+            First name is required.
+        </p>
+    </div>
 
-    <label>Last Name</label>
-    <input type="text" formControlName="lastName">
+    <div>    
+        <label>Last Name</label>
+        <input type="text" formControlName="lastName">
+        <p *ngIf="lastName.touched && lastName.hasError('required')">
+            Last name is required.
+        </p>
+    </div>
 
-    <label>Email</label>
-    <input type="text" formControlName="email">
+    <div>
+        <label>Email</label>
+        <input type="text" formControlName="email">
+        <p *ngIf="email.touched && email.hasError('required')">
+            Email is required.
+        </p>
+        <p *ngIf="email.touched && email.hasError('email')">
+            Email is not valid.
+        </p>
+    </div>
     
-    <label>Phone</label>
-    <input type="text" formControlName="phone">
+    <div>
+        <label>Phone</label>
+        <input type="text" formControlName="phone">
+        <p *ngIf="phone.touched && phone.hasError('phone')">
+            Phone is not valid.
+        </p>
+    </div>
 
     <button type="submit">Add Person</button>
 </form>
-
-<!-- TODO(day-3): add form validation -->
